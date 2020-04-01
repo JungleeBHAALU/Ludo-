@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+ 
+  <title>Ludo </title>
+  
+  <link rel="stylesheet" href="Ludo.css">
+
+</head>
+
+<body >
+    <div  id="ChoosePlayerDiv" >
+        <h1>Welcome!!</h1>
+        <p>Please select number of players:</p>
+        <!-- <input type="radio" id="1pl" name="gender" value="1">
+        <label for="1pl">1 player</label><br> -->
+        <input type="radio" id="2pl" name="gender" value="2">
+        <label for="2pl">2 players</label><br>
+        <input type="radio" id="3pl" name="gender" value="3">
+        <label for="3pl">3 players</label><br>
+        <input type="radio" id="4pl" name="gender" value="4">
+        <label for="4pl">4 players</label>
+        <button div="startBtn" onclick="startGame()">Start the game!</button>
+    </div>
+<div id="GameDiv" style="display: none;">
+    <table class="Maintable" cellspacing="0" style="float: left;">
+        <tr>
+            <td class="home green">
+                <div class="innerHome">
+                    <div class="homeInnerDiv"><div id="hg1" class="circleBase type1 green container"></div></div>
+                    <div class="homeInnerDiv"><div id="hg2" class="circleBase type1 green"></div></div>
+                    <div class="homeInnerDiv" style="clear: left;"><div id="hg3" class="circleBase type1 green" ></div></div>
+                    <div class="homeInnerDiv"><div id="hg4" class="circleBase type1 green"></div></div>
+                </div>
+            </td>
+            <td style="padding: 0px;">
+                <table class="walkway2" cellspacing="0">
+                    <tr><td id="g12"></td><td id="g13"></td><td id="r1"></td></tr>
+                    <tr><td id="g11"></td><td id="r14" class="red"></td><td id="r2" class="red"></td></tr>
+                    <tr><td id="g10" class="green"></td><td id="r15" class="red"></td><td id="r3"></td></tr>
+                    <tr><td id="g9"></td><td id="r16" class="red"></td><td id="r4"></td></tr>
+                    <tr><td id="g8"></td><td id="r17" class="red"></td><td id="r5"></td></tr>
+                    <tr><td id="g7"></td><td id="r18" class="red"></td><td id="r6"></td></tr>
+                </table>
+            </td>
+            <td  class="home red" >
+                <div class="innerHome">
+                    <div class="homeInnerDiv"><div id="hr1"class="circleBase type1 red"></div></div>
+                    <div class="homeInnerDiv"><div id="hr2" class="circleBase type1 red"></div></div>
+                    <div class="homeInnerDiv" style="clear: left;"><div id="hr3" class="circleBase type1 red"></div></div>
+                    <div class="homeInnerDiv"><div id="hr4" class="circleBase type1 red"></div></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 0px;">
+                <table class="walkway1 " cellspacing="0">
+                    <tr><td id="g1"></td><td id="g2" class="green"></td><td id="g3"></td><td id="g4"></td><td id="g5"></td><td id="g6"></td></tr>
+                    <tr><td id="y13"></td><td class="green" id="g14"></td><td id="g15" class="green"></td><td id="g16" class="green"></td><td id="g17" class="green"></td><td id="g18" class="green"></td></tr>
+                    <tr><td id="y12"></td><td id="y11"></td><td id="y10" class="yellow"></td><td id="y9"></td><td id="y8"></td><td id="y7"></td></tr>
+                </table>
+            </td>
+            <td class='square winnerTd' style="padding:0px;margin: 0px;">
+                <div id="w2" class="top2 red"></div><div id="w1" class="left2 green"></div><div id="w3" class="right2 blue"></div><div id="w4" class="bottom2 yellow"></div>
+            </td>
+            <!-- <td class="winnerTd" style="padding: 0px;margin: 0px;">
+                <div id="w2" class="top"></div><div id="w1" class="left"></div><div id="w3" class="right"></div><div id="w4" class="bottom"></div>
+            </td> -->
+            <td style="padding:0px;margin: 0px;">
+                <table class="walkway1" cellspacing="0">
+                    <tr><td id="r7"></td><td id="r8"></td><td id="r9"></td><td id="r10" class="red"></td><td id="r11"></td><td id="r12"></td></tr>
+                    <tr><td id="b18" class="blue"></td><td id="b17" class="blue"></td><td id="b16" class="blue"></td><td id="b15" class="blue"></td><td id="b14" class="blue"></td><td id="r13"></td></tr>
+                    <tr><td  id="b6"></td><td  id="b5"></td><td id="b4"></td><td id="b3"></td><td id="b2" class="blue"></td><td id="b1"></td></tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td  class="home yellow" >
+                <div class="innerHome">
+                    <div class="homeInnerDiv"><div id="hy1" class="circleBase type1 yellow"></div></div>
+                    <div class="homeInnerDiv"><div id="hy2" class="circleBase type1 yellow"></div></div>
+                    <div class="homeInnerDiv" style="clear: left;"><div id="hy3" class="circleBase type1 yellow" ></div></div>
+                    <div class="homeInnerDiv"><div id="hy4" class="circleBase type1 yellow"></div></div>
+                </div>
+            </td>
+            <td style="padding: 0px;">
+                <table class="walkway2" cellspacing="0">
+                    <tr><td id="y6"></td><td id="y18" class="yellow"></td><td  id="b7"></td></tr>
+                    <tr><td id="y5"></td><td id="y17" class="yellow"></td><td id="b8"></td></tr>
+                    <tr><td id="y4"></td><td id="y16" class="yellow"></td><td id="b9"></td></tr>
+                    <tr><td id="y3"></td><td id="y15" class="yellow"></td ><td id="b10" class="blue"></td></tr>
+                    <tr><td id="y2" class="yellow"></td><td id="y14" class="yellow"></td><td id="b11"></td></tr>
+                    <tr><td id="y1"></td><td id="b13"></td><td id="b12"></td></tr>
+                </table>
+            </td>
+            <td class="home blue">
+                <div class="innerHome">
+                    <div class="homeInnerDiv"><div id="hb1" class="circleBase type1 blue"></div></div>
+                    <div class="homeInnerDiv"><div id="hb2" class="circleBase type1 blue"></div></div>
+                    <div class="homeInnerDiv" style="clear: left;"><div id="hb3" class="circleBase type1 blue" ></div></div>
+                    <div class="homeInnerDiv"><div id="hb4" class="circleBase type1 blue"></div></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div style="float: left;">
+        <div><div id="palyerTurnDiv" class="green" style="height:40px ;width: 200px;"><h1 style="text-align: center;">1</h1></div></div>
+        <button id="Dicebutton" onclick="RollDice();"><img id="dice"><div id="startGame" style="padding: 0px;margin: 0px ;background-color: chartreuse;color: black;"><h2>Click here to 'Roll the dice!!!'</h2> </div></button>
+    </div>
+    
+</div>
+
+  <script src="Ludo.js"></script>
+</body>
+</html>
