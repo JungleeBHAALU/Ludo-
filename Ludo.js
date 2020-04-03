@@ -129,6 +129,7 @@ function selectPawn(diceNum){          //for selecting pawn to play
   
     var tempArr=PawnsObj[playerCount].idArr;
     var ActivePlayerCount=0;
+    var ArrForOnePawnCase=[];
     for(var i=0;i<tempArr.length;i++){
  if(PlayerInfoObj[playerCount][tempArr[i]].status=='Active'||PlayerInfoObj[playerCount][tempArr[i]].status=='SafeZone') {
     // console.log(tempArr[i]);
@@ -146,12 +147,16 @@ var PlaceToMoveIndex=(playerPath[playerCount])[pawnMoveIndex];
                 elem.setAttribute("onclick","PawnAction('"+tempArr[i]+"',"+diceNum+")");
                 elem.className+=' '+PawnsObj[playerCount].PawnClass;
                 elem.style.pointerEvents = 'auto';
+                ArrForOnePawnCase.push(tempArr[i]);
                 ActivePlayerCount++;
             }
         }
     }
     if(ActivePlayerCount==0){
         PlayerSwitcher();
+    }
+    else if(ActivePlayerCount==1){
+        PawnAction(ArrForOnePawnCase[0],diceNum);
     }
     else{
         document.getElementById("Dicebutton").style.pointerEvents="none";
